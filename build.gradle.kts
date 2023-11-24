@@ -24,6 +24,9 @@ dependencies {
     compileOnly("eu.cloudnetservice.cloudnet:platform-inject-api")
     compileOnly("eu.cloudnetservice.cloudnet:platform-inject-processor")
 
+    annotationProcessor("org.projectlombok:lombok:1.18.28")
+    compileOnly("org.projectlombok:lombok:1.18.28")
+
     compileOnly("org.fusesource.jansi:jansi:2.4.0")
 }
 
