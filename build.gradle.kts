@@ -9,12 +9,12 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
 
-    maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://nexus.velocitypowered.com/repository/maven-public/")
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.20.2-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20.2-R0.1-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:3.1.1")
 
     compileOnly(platform("eu.cloudnetservice.cloudnet:bom:4.0.0-RC9"))
