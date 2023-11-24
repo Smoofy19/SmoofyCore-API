@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("maven-publish")
 }
 
 group = "de.smoofy"
@@ -28,6 +29,11 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.28")
 
     compileOnly("org.fusesource.jansi:jansi:2.4.0")
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
 }
 
 tasks.withType<JavaCompile>().configureEach() {
