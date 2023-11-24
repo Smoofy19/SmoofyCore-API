@@ -8,8 +8,15 @@ package de.smoofy.core.api.player;
  * Created - 24.11.2023 - 17:27
  */
 
+import eu.cloudnetservice.modules.bridge.player.CloudPlayer;
+
 /**
  *
  */
-public interface ICorePlayer {
+public interface ICorePlayer extends ICoreOfflinePlayer {
+
+    /**
+     * @return the {@link CloudPlayer}
+     */
+    CloudPlayer cloudPlayer();
 }

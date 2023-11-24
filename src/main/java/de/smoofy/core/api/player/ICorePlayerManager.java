@@ -8,8 +8,40 @@ package de.smoofy.core.api.player;
  * Created - 24.11.2023 - 17:27
  */
 
+import java.util.List;
+import java.util.UUID;
+
 /**
  *
  */
 public interface ICorePlayerManager {
+
+    /**
+     * @return a list of all cached {@link ICorePlayer}'s
+     */
+    List<ICorePlayer> cachedCorePlayers();
+
+    /**
+     * @param name the name of the player
+     * @return the {@link ICorePlayer} of the name
+     */
+    ICorePlayer corePlayer(String name);
+
+    /**
+     * @param uuid the uuid of the player
+     * @return the {@link ICorePlayer} of the uuid
+     */
+    ICorePlayer corePlayer(UUID uuid);
+
+    /**
+     * @param name the name of the player
+     * @return the {@link ICoreOfflinePlayer} of the name
+     */
+    ICoreOfflinePlayer coreOfflinePlayer(String name);
+
+    /**
+     * @param uuid the uuid of the player
+     * @return the {@link ICoreOfflinePlayer} of the uuid
+     */
+    ICoreOfflinePlayer coreOfflinePlayer(UUID uuid);
 }

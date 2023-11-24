@@ -8,8 +8,55 @@ package de.smoofy.core.api.player;
  * Created - 24.11.2023 - 17:27
  */
 
+import eu.cloudnetservice.modules.bridge.player.CloudOfflinePlayer;
+
+import java.util.UUID;
+
 /**
  *
  */
 public interface ICoreOfflinePlayer {
+
+    /**
+     * @return the name of the player
+     */
+    String name();
+
+    /**
+     * @return the uuid of the player
+     */
+    UUID uuid();
+
+    /**
+     * @return the {@link CloudOfflinePlayer}
+     */
+    CloudOfflinePlayer cloudOfflinePlayer();
+
+    /**
+     *
+     * @return the {@link PermissionUser}
+     */
+    //PermissionUser permissionUser();
+
+    /**
+     *
+     * @return the {@link PermissionGroup}
+     */
+    //PermissionGroup group();
+
+    /**
+     *
+     * @return a list of all {@link PermissionUserGroupInfo}s
+     */
+    //List<PermissionUserGroupInfo> permissionUserGroupInfos();
+
+    /**
+     * @return the display name of the player
+     */
+    String displayName();
+
+    /**
+     * @return the rank color of the player
+     */
+    String color();
 }
