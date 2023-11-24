@@ -31,6 +31,14 @@ dependencies {
     compileOnly("org.fusesource.jansi:jansi:2.4.0")
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
+}
+
 java {
     withSourcesJar()
     withJavadocJar()
