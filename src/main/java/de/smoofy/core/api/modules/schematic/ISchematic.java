@@ -15,7 +15,14 @@ import org.bukkit.Location;
 
 public interface ISchematic {
 
-    Location first();
-
-    Location second();
+    /**
+     * Paste a schematic at a location.
+     *
+     * @param game     the game (e.g. SkyWars)
+     * @param type     the type (e.g. 8x1)
+     * @param name     the name of the map
+     * @param location the start location
+     * @return true if the schematic was pasted successfully, otherwise false
+     */
+    boolean paste(String game, String type, String name, Location location);
 }
