@@ -23,7 +23,7 @@ import de.smoofy.core.api.modules.hologram.IHologramHandler;
 import de.smoofy.core.api.modules.hotbar.IHotbarHandler;
 import de.smoofy.core.api.modules.location.ILocationHandler;
 import de.smoofy.core.api.modules.particle.IParticleHandler;
-import de.smoofy.core.api.modules.schematic.ISchematicManager;
+import de.smoofy.core.api.modules.schematic.ISchematic;
 import de.smoofy.core.api.modules.skulls.ISkullHandler;
 import de.smoofy.core.api.modules.tablist.ITablistBuilder;
 import de.smoofy.core.api.modules.tasks.ICoreRunTask;
@@ -122,9 +122,9 @@ public abstract class Core {
     public abstract IParticleHandler particleHandler();
 
     /**
-     * @return the {@link ISchematicManager}
+     * @return the {@link ISchematic}
      */
-    public abstract ISchematicManager schematicManager();
+    public abstract ISchematic schematic();
 
     /**
      * @return the {@link ISkullHandler}
