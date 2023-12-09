@@ -15,6 +15,7 @@ import de.smoofy.core.api.game.IGameHandler;
 import de.smoofy.core.api.game.countdown.ICountdownManager;
 import de.smoofy.core.api.game.map.IWorldManager;
 import de.smoofy.core.api.game.phase.IPhaseManager;
+import de.smoofy.core.api.game.teams.ITeamManager;
 import de.smoofy.core.api.logger.ILogger;
 import de.smoofy.core.api.message.ITextBuilder;
 import de.smoofy.core.api.modules.actionbar.IActionbar;
@@ -39,6 +40,18 @@ public abstract class Core {
 
     @Getter
     private static Core instance;
+
+    @Getter
+    private static final String prefix = "";
+
+    @Getter
+    private static final String noConsole = "";
+
+    @Getter
+    private static final String noPerms = "";
+
+    @Getter
+    private static final String usage = "";
 
     public static boolean setInstance(Core instance) {
         Core.instance = instance;
@@ -74,6 +87,11 @@ public abstract class Core {
      * @return the {@link IPhaseManager}
      */
     public abstract IPhaseManager phaseManager();
+
+    /**
+     * @return the {@link ITeamManager}
+     */
+    public abstract ITeamManager teamManager();
 
     /**
      * @return the {@link IGameHandler}
