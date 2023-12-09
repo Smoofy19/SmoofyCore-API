@@ -42,16 +42,16 @@ public abstract class Core {
     private static Core instance;
 
     @Getter
-    private static final String prefix = "";
+    private static final String prefix = "§8[§bCore§8] ";
 
     @Getter
-    private static final String noConsole = "";
+    private static final String noConsole = "§cDu musst ein Spieler sein!";
 
     @Getter
-    private static final String noPerms = "";
+    private static final String noPerms = "§fUnknown command. Type \"/help\" for help.";
 
     @Getter
-    private static final String usage = "";
+    private static final String usage = "§cVerwende§8: §c";
 
     public static boolean setInstance(Core instance) {
         Core.instance = instance;
