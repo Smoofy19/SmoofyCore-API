@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("maven-publish")
+    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
 group = "de.smoofy"
@@ -25,10 +26,21 @@ dependencies {
     compileOnly("eu.cloudnetservice.cloudnet:platform-inject-api")
     compileOnly("eu.cloudnetservice.cloudnet:platform-inject-processor")
 
+    compileOnly("net.luckperms:api:5.4")
+
+    implementation("com.github.cryptomorin:XSeries:9.7.0") { isTransitive = false }
+
     annotationProcessor("org.projectlombok:lombok:1.18.28")
     compileOnly("org.projectlombok:lombok:1.18.28")
 
     compileOnly("org.fusesource.jansi:jansi:2.4.0")
+}
+
+tasks {
+    shadowJar {
+        archiveClassifier.set("")
+        relocate("com.cryptomorin.xseries", "de.smoofy.core.api.xseries")
+    }
 }
 
 publishing {
