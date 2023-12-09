@@ -9,6 +9,8 @@ package de.smoofy.core.api.player;
  */
 
 import eu.cloudnetservice.modules.bridge.player.CloudOfflinePlayer;
+import net.luckperms.api.model.group.Group;
+import net.luckperms.api.model.user.User;
 
 import java.util.UUID;
 
@@ -34,21 +36,15 @@ public interface ICoreOfflinePlayer {
 
     /**
      *
-     * @return the {@link PermissionUser}
+     * @return the {@link User}
      */
-    //PermissionUser permissionUser();
+    User permissionUser();
 
     /**
      *
-     * @return the {@link PermissionGroup}
+     * @return the {@link Group}
      */
-    //PermissionGroup group();
-
-    /**
-     *
-     * @return a list of all {@link PermissionUserGroupInfo}s
-     */
-    //List<PermissionUserGroupInfo> permissionUserGroupInfos();
+    Group permissionGroup();
 
     /**
      * @return the display name of the player
