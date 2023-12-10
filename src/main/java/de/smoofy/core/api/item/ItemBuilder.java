@@ -10,11 +10,14 @@ package de.smoofy.core.api.item;
 
 import com.cryptomorin.xseries.XEnchantment;
 import com.cryptomorin.xseries.XMaterial;
+import com.cryptomorin.xseries.XPotion;
 import com.google.common.collect.Lists;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionEffect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,15 +28,10 @@ import java.util.List;
 public class ItemBuilder {
 
     private final ItemStack itemStack;
-    private final ItemMeta itemMeta;
+    private ItemMeta itemMeta;
 
     public ItemBuilder(ItemStack itemStack) {
         this.itemStack = itemStack;
-        this.itemMeta = this.itemStack.getItemMeta();
-    }
-
-    public ItemBuilder(Material material) {
-        this.itemStack = new ItemStack(material);
         this.itemMeta = this.itemStack.getItemMeta();
     }
 
@@ -61,6 +59,11 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder unbreakable() {
+        this.itemMeta.setUnbreakable(true);
+        return this;
+    }
+
     public ItemBuilder enchant(XEnchantment enchantment, int level) {
         if (enchantment.getEnchant() == null) {
             return this;
@@ -74,6 +77,17 @@ public class ItemBuilder {
             return this;
         }
         this.itemStack.addUnsafeEnchantment(enchantment.getEnchant(), level);
+        return this;
+    }
+
+    public ItemBuilder potionEffect(XPotion potion, int duration, int amplifier) {
+        PotionEffect potionEffect = potion.buildPotionEffect(duration, amplifier);
+        if (potionEffect == null) {
+            return this;
+        }
+        PotionMeta potionMeta = (PotionMeta) this.itemMeta;
+        potionMeta.setMainEffect(potionEffect.getType());
+        this.itemMeta = potionMeta;
         return this;
     }
 
