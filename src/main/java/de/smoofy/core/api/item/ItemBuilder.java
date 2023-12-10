@@ -18,6 +18,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -80,13 +81,13 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder potionEffect(XPotion potion, int duration, int amplifier) {
-        PotionEffect potionEffect = potion.buildPotionEffect(duration, amplifier);
-        if (potionEffect == null) {
+    public ItemBuilder potionEffect(XPotion potion, int duration, int amplifier, boolean ambient, boolean particles, boolean icon) {
+        PotionEffectType potionEffectType = potion.getPotionEffectType();
+        if (potionEffectType == null) {
             return this;
         }
         PotionMeta potionMeta = (PotionMeta) this.itemMeta;
-        potionMeta.setMainEffect(potionEffect.getType());
+        potionMeta.addCustomEffect(new PotionEffect(potionEffectType, duration, amplifier, ambient, particles, icon), true);
         this.itemMeta = potionMeta;
         return this;
     }

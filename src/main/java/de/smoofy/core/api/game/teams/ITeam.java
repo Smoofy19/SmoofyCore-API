@@ -7,7 +7,7 @@ package de.smoofy.core.api.game.teams;
  * Created - 09.12.2023 - 18:23
  */
 
-import org.bukkit.Color;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -34,9 +34,9 @@ public interface ITeam {
     /**
      * Get the color of the team.
      *
-     * @return a {@link Color} of the team
+     * @return a {@link ChatColor} of the team
      */
-    Color color();
+    ChatColor color();
 
     /**
      * Get the color code of the team.
