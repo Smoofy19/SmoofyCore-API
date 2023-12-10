@@ -22,9 +22,8 @@ public interface ITeamManager {
      * @param id    the id of the team
      * @param name  the name of the team
      * @param color the color of the team
-     * @param code  the colorcode of the team
      */
-    void create(int id, String name, ChatColor color, String code);
+    void create(int id, String name, ChatColor color);
 
     /**
      * Remove a team.

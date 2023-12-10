@@ -39,13 +39,6 @@ public interface ITeam {
     ChatColor color();
 
     /**
-     * Get the color code of the team.
-     *
-     * @return the code of the team color
-     */
-    String code();
-
-    /**
      * Get the id of the team.
      *
      * @return the id of the team
