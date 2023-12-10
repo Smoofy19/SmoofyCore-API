@@ -7,7 +7,7 @@ package de.smoofy.core.api.game.teams;
  * Created - 09.12.2023 - 18:25
  */
 
-import org.bukkit.Color;
+import org.bukkit.ChatColor;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public interface ITeamManager {
      * @param color the color of the team
      * @param code  the colorcode of the team
      */
-    void create(int id, String name, Color color, String code);
+    void create(int id, String name, ChatColor color, String code);
 
     /**
      * Remove a team.
