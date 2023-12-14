@@ -12,10 +12,12 @@ import com.cryptomorin.xseries.XEnchantment;
 import com.cryptomorin.xseries.XMaterial;
 import com.cryptomorin.xseries.XPotion;
 import com.google.common.collect.Lists;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -50,8 +52,20 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder noname() {
+        this.itemMeta.setDisplayName(" ");
+        return this;
+    }
+
     public ItemBuilder amount(int amount) {
         this.itemStack.setAmount(amount);
+        return this;
+    }
+
+    public ItemBuilder armorColor(Color color) {
+        LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) this.itemMeta;
+        leatherArmorMeta.setColor(color);
+        this.itemMeta = leatherArmorMeta;
         return this;
     }
 
