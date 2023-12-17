@@ -1,4 +1,4 @@
-package de.smoofy.core.api.game.map;
+package de.smoofy.core.api.game.map.world;
 /*
  * Copyright ©
  * @author - Smoofy
@@ -6,8 +6,6 @@ package de.smoofy.core.api.game.map;
  * @Twitter - https://twitter.com/Smoofy19
  * Created - 24.11.2023 - 19:54
  */
-
-import de.smoofy.core.api.game.map.world.IWorldCreator;
 
 /**
  *
