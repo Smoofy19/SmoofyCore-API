@@ -13,7 +13,8 @@ import de.smoofy.core.api.coins.CoinAPI;
 import de.smoofy.core.api.fetcher.IUUIDFetcher;
 import de.smoofy.core.api.game.IGameHandler;
 import de.smoofy.core.api.game.countdown.ICountdownManager;
-import de.smoofy.core.api.game.map.IWorldManager;
+import de.smoofy.core.api.game.map.IMapManager;
+import de.smoofy.core.api.game.map.world.IWorldManager;
 import de.smoofy.core.api.game.phase.IPhaseManager;
 import de.smoofy.core.api.game.teams.ITeamManager;
 import de.smoofy.core.api.logger.ILogger;
@@ -82,6 +83,11 @@ public abstract class Core {
      * @return the {@link IWorldManager}
      */
     public abstract IWorldManager worldManager();
+
+    /**
+     * @return the {@link IMapManager}
+     */
+    public abstract IMapManager mapManager();
 
     /**
      * @return the {@link IPhaseManager}
