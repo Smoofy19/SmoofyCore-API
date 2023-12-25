@@ -31,6 +31,7 @@ import de.smoofy.core.api.modules.tablist.ITablistBuilder;
 import de.smoofy.core.api.modules.tasks.ICoreRunTask;
 import de.smoofy.core.api.modules.title.ITitleHandler;
 import de.smoofy.core.api.player.ICorePlayerManager;
+import de.smoofy.core.api.player.scoreboard.IPlayerBoardManager;
 import de.smoofy.core.api.time.ITime;
 import lombok.Getter;
 
@@ -169,6 +170,11 @@ public abstract class Core {
      * @return the {@link ITitleHandler}
      */
     public abstract ITitleHandler titleHandler();
+
+    /**
+     * @return the {@link IPlayerBoardManager}
+     */
+    public abstract IPlayerBoardManager playerBoardManager();
 
     /**
      * @return the {@link ICorePlayerManager}
