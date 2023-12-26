@@ -7,6 +7,8 @@ package de.smoofy.core.api.game.map.world;
  * Created - 24.11.2023 - 19:54
  */
 
+import org.bukkit.World;
+
 /**
  *
  */
@@ -23,6 +25,8 @@ public interface IWorldManager {
      * Load a world.
      *
      * @param name the name of the world you want to load
+     *
+     * @return the loaded {@link World}
      */
-    void loadWorld(String name);
+    World loadWorld(String name);
 }
