@@ -24,7 +24,7 @@ public class InventoryBuilder {
     }
 
     public InventoryBuilder(String title, int lines) {
-        this.inventory = Bukkit.createInventory(null, lines, title);
+        this.inventory = Bukkit.createInventory(null, lines*9, title);
     }
 
     public InventoryBuilder(String title, InventoryType inventoryType) {
