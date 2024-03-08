@@ -8,12 +8,20 @@ package de.smoofy.core.api.player;
  * Created - 24.11.2023 - 17:27
  */
 
+import org.bukkit.entity.Player;
+
 import java.util.UUID;
 
 /**
  *
  */
 public interface ICorePlayerManager {
+
+    /**
+     * @param player the player
+     * @return the {@link ICorePlayer} of the player
+     */
+    ICorePlayer corePlayer(Player player);
 
     /**
      * @param name the name of the player
@@ -38,4 +46,6 @@ public interface ICorePlayerManager {
      * @return the {@link ICoreOfflinePlayer} of the uuid
      */
     ICoreOfflinePlayer coreOfflinePlayer(UUID uuid);
+
+    void init(com.velocitypowered.api.proxy.Player player);
 }
