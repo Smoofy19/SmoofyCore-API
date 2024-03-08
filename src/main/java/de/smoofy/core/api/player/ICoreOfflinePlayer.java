@@ -12,6 +12,7 @@ import eu.cloudnetservice.modules.bridge.player.CloudOfflinePlayer;
 import net.luckperms.api.model.group.Group;
 import net.luckperms.api.model.user.User;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -35,6 +36,22 @@ public interface ICoreOfflinePlayer {
     CloudOfflinePlayer cloudOfflinePlayer();
 
     /**
+     * @param neededPriority the priority that is needed
+     * @return if the player has the priority
+     */
+    boolean hasPriority(int neededPriority);
+
+    /**
+     * @return the real {@link Rank} of the player
+     */
+    Rank realRank();
+
+    /**
+     * @return the player {@link Rank}'s
+     */
+    List<Rank> ranks();
+
+    /**
      *
      * @return the {@link User}
      */
@@ -55,4 +72,14 @@ public interface ICoreOfflinePlayer {
      * @return the rank color of the player
      */
     String color();
+
+    /**
+     * @return the amount of coins the player has
+     */
+    int coins();
+
+    /**
+     * @return the online time of the player
+     */
+    int onlineTime();
 }

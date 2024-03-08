@@ -10,6 +10,8 @@ package de.smoofy.core.api;
 
 import de.smoofy.core.api.cloud.ICloudManager;
 import de.smoofy.core.api.coins.CoinAPI;
+import de.smoofy.core.api.config.IConfigManager;
+import de.smoofy.core.api.database.IDatabase;
 import de.smoofy.core.api.fetcher.IUUIDFetcher;
 import de.smoofy.core.api.game.IGameHandler;
 import de.smoofy.core.api.game.countdown.ICountdownManager;
@@ -43,18 +45,6 @@ public abstract class Core {
     @Getter
     private static Core instance;
 
-    @Getter
-    private static final String prefix = "§8[§bCore§8] ";
-
-    @Getter
-    private static final String noConsole = "§cDu musst ein Spieler sein!";
-
-    @Getter
-    private static final String noPerms = "§fUnknown command. Type \"/help\" for help.";
-
-    @Getter
-    private static final String usage = "§cVerwende§8: §c";
-
     public static boolean setInstance(Core instance) {
         Core.instance = instance;
         return getInstance() != null;
@@ -69,6 +59,16 @@ public abstract class Core {
      * @return the {@link CoinAPI}
      */
     public abstract CoinAPI coinAPI();
+
+    /**
+     * @return the {@link IConfigManager}
+     */
+    public abstract IConfigManager configManager();
+
+    /**
+     * @return the {@link IDatabase}
+     */
+    public abstract IDatabase database();
 
     /**
      * @return the {@link IUUIDFetcher}
