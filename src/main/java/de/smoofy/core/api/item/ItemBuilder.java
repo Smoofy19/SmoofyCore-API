@@ -12,6 +12,8 @@ import com.cryptomorin.xseries.XEnchantment;
 import com.cryptomorin.xseries.XMaterial;
 import com.cryptomorin.xseries.XPotion;
 import com.google.common.collect.Lists;
+import de.smoofy.core.api.utils.NBTEditor;
+import lombok.Getter;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
@@ -28,6 +30,7 @@ import java.util.List;
 /**
  *
  */
+@Getter
 public class ItemBuilder {
 
     private final ItemStack itemStack;
@@ -35,6 +38,11 @@ public class ItemBuilder {
 
     public ItemBuilder(ItemStack itemStack) {
         this.itemStack = itemStack;
+        this.itemMeta = this.itemStack.getItemMeta();
+    }
+
+    public ItemBuilder(Material material) {
+        this.itemStack = new ItemStack(material);
         this.itemMeta = this.itemStack.getItemMeta();
     }
 
@@ -62,6 +70,11 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder durability(short durability) {
+        this.itemStack.setDurability(durability);
+        return this;
+    }
+
     public ItemBuilder armorColor(Color color) {
         LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) this.itemMeta;
         leatherArmorMeta.setColor(color);
@@ -75,7 +88,7 @@ public class ItemBuilder {
     }
 
     public ItemBuilder unbreakable() {
-        this.itemMeta.setUnbreakable(true);
+        NBTEditor.set(this.itemStack, (byte) 1, "Unbreakable");
         return this;
     }
 
