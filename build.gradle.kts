@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("maven-publish")
-    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "de.smoofy"
@@ -29,6 +29,8 @@ dependencies {
     compileOnly("net.luckperms:api:5.4")
 
     implementation("com.github.cryptomorin:XSeries:9.7.0") { isTransitive = false }
+
+    implementation("com.google.code.gson:gson:2.10.1")
 
     annotationProcessor("org.projectlombok:lombok:1.18.28")
     compileOnly("org.projectlombok:lombok:1.18.28")
