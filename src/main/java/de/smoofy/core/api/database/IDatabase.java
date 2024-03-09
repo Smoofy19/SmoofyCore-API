@@ -30,8 +30,6 @@ public interface IDatabase {
 
     void connect(Login login);
 
-    void connect();
-
     void disconnect();
 
     void createTable(@NotNull Table table);
