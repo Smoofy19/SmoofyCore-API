@@ -47,5 +47,7 @@ public interface ICorePlayerManager {
      */
     ICoreOfflinePlayer coreOfflinePlayer(UUID uuid);
 
-    void init(com.velocitypowered.api.proxy.Player player);
+    void init(UUID uuid);
+
+    boolean exists(UUID uuid);
 }
