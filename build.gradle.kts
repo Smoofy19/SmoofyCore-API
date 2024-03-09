@@ -9,12 +9,15 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    mavenLocal()
 
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://nexus.velocitypowered.com/repository/maven-public/")
 }
 
 dependencies {
+    compileOnly("de.smoofy:core-database:1.0-SNAPSHOT")
+
     compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:3.1.1")
 
