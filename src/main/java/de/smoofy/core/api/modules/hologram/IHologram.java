@@ -7,8 +7,8 @@ package de.smoofy.core.api.modules.hologram;
  * Created - 24.11.2023 - 20:05
  */
 
+import de.smoofy.core.api.player.ICorePlayer;
 import org.bukkit.Location;
-import org.bukkit.entity.Player;
 
 /**
  *
@@ -34,14 +34,14 @@ public interface IHologram {
      *
      * @param player the player
      */
-    void display(Player player);
+    void display(ICorePlayer player);
 
     /**
      * Hide the hologram from a player.
      *
      * @param player the player
      */
-    void hide(Player player);
+    void hide(ICorePlayer player);
 
     /**
      * Get the location of the hologram.
