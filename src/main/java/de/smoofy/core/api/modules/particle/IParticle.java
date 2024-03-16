@@ -7,17 +7,17 @@ package de.smoofy.core.api.modules.particle;
  * Created - 24.11.2023 - 20:08
  */
 
+import de.smoofy.core.api.player.ICorePlayer;
 import org.bukkit.Location;
-import org.bukkit.entity.Player;
 
 /**
  *
  */
 public interface IParticle {
 
-    void display(Player player);
+    void display(ICorePlayer player);
 
-    void hide(Player player);
+    void hide(ICorePlayer player);
 
     String key();
 

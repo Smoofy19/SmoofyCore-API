@@ -7,7 +7,7 @@ package de.smoofy.core.api.modules.tablist;
  * Created - 24.11.2023 - 20:13
  */
 
-import org.bukkit.entity.Player;
+import de.smoofy.core.api.player.ICorePlayer;
 
 /**
  *
@@ -19,12 +19,12 @@ public interface ITablistBuilder {
      *
      * @param player the player
      */
-    void setDefault(Player player);
+    void setDefault(ICorePlayer player);
 
     /**
      * Set the game tablist to a player.
      *
      * @param player the player
      */
-    void setGame(Player player);
+    void setGame(ICorePlayer player);
 }

@@ -7,7 +7,7 @@ package de.smoofy.core.api.modules.actionbar;
  * Created - 24.11.2023 - 20:01
  */
 
-import org.bukkit.entity.Player;
+import de.smoofy.core.api.player.ICorePlayer;
 
 /**
  *
@@ -20,7 +20,7 @@ public interface IActionbar {
      * @param player  the player
      * @param message the message
      */
-    void send(Player player, String message);
+    void send(ICorePlayer player, String message);
 
     /**
      * Send an actionbar to a player permanent.
@@ -28,7 +28,7 @@ public interface IActionbar {
      * @param player  the player
      * @param message the message
      */
-    void permanent(Player player, String message);
+    void permanent(ICorePlayer player, String message);
 
     /**
      * Send an actionbar to all online players.

@@ -7,7 +7,7 @@ package de.smoofy.core.api.modules.title;
  * Created - 24.11.2023 - 20:14
  */
 
-import org.bukkit.entity.Player;
+import de.smoofy.core.api.player.ICorePlayer;
 
 /**
  *
@@ -20,7 +20,7 @@ public interface ITitleHandler {
      * @param player the player
      * @param title  the title
      */
-    void send(Player player, String title);
+    void send(ICorePlayer player, String title);
 
     /**
      * Send a title to a player.
@@ -29,7 +29,7 @@ public interface ITitleHandler {
      * @param title    the title
      * @param subtitle the subtitle
      */
-    void send(Player player, String title, String subtitle);
+    void send(ICorePlayer player, String title, String subtitle);
 
     /**
      * Send a title to all players.
@@ -55,7 +55,7 @@ public interface ITitleHandler {
      * @param stay    the stay duration
      * @param fadeOut the fade out duration
      */
-    void send(Player player, String title, int fadeIn, int stay, int fadeOut);
+    void send(ICorePlayer player, String title, int fadeIn, int stay, int fadeOut);
 
     /**
      * Send a title to a player.
@@ -67,7 +67,7 @@ public interface ITitleHandler {
      * @param stay     the stay duration
      * @param fadeOut  the fade out duration
      */
-    void send(Player player, String title, String subtitle, int fadeIn, int stay, int fadeOut);
+    void send(ICorePlayer player, String title, String subtitle, int fadeIn, int stay, int fadeOut);
 
     /**
      * Send a title to all players.
@@ -95,7 +95,7 @@ public interface ITitleHandler {
      *
      * @param player the player
      */
-    void reset(Player player);
+    void reset(ICorePlayer player);
 
     /**
      * Reset all titles of all players.

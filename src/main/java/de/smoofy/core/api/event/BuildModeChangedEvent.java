@@ -7,9 +7,9 @@ package de.smoofy.core.api.event;
  * Created - 24.11.2023 - 20:04
  */
 
+import de.smoofy.core.api.player.ICorePlayer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.bukkit.entity.Player;
 
 /**
  *
@@ -18,6 +18,6 @@ import org.bukkit.entity.Player;
 @AllArgsConstructor
 public class BuildModeChangedEvent extends BukkitEvent {
 
-    private final Player player;
+    private final ICorePlayer player;
     private final boolean canBuild;
 }

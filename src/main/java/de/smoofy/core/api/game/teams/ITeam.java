@@ -7,8 +7,8 @@ package de.smoofy.core.api.game.teams;
  * Created - 09.12.2023 - 18:23
  */
 
+import de.smoofy.core.api.player.ICorePlayer;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
 
 import java.util.List;
 
@@ -20,9 +20,9 @@ public interface ITeam {
     /**
      * Get the members of the team.
      *
-     * @return a {@link List} of {@link Player} who are in the team.
+     * @return a {@link List} of {@link ICorePlayer} who are in the team.
      */
-    List<Player> members();
+    List<ICorePlayer> members();
 
     /**
      * Get the name of the team.

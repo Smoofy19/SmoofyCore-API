@@ -7,8 +7,8 @@ package de.smoofy.core.api.modules.skulls.flyingskull;
  * Created - 24.11.2023 - 20:10
  */
 
+import de.smoofy.core.api.player.ICorePlayer;
 import org.bukkit.Location;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
@@ -20,16 +20,16 @@ public interface IFlyingSkull {
 
     void initArmorStands();
 
-    void display(Player player);
+    void display(ICorePlayer player);
 
-    void destroy(Player player);
+    void destroy(ICorePlayer player);
 
-    void updateEquipment(Player player, Object slot, ItemStack itemStack);
+    void updateEquipment(ICorePlayer player, Object slot, ItemStack itemStack);
     //void updateEquipment(Player player, EnumItemSlot slot, ItemStack itemStack);
 
     Location location();
 
     Object armorStand();
 
-    List<Player> updateList();
+    List<ICorePlayer> updateList();
 }

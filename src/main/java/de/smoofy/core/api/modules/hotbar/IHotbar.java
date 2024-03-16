@@ -7,7 +7,7 @@ package de.smoofy.core.api.modules.hotbar;
  * Created - 24.11.2023 - 20:06
  */
 
-import org.bukkit.entity.Player;
+import de.smoofy.core.api.player.ICorePlayer;
 
 /**
  *
@@ -19,14 +19,14 @@ public interface IHotbar {
      *
      * @param player the player
      */
-    void display(Player player);
+    void display(ICorePlayer player);
 
     /**
      * Hide a hotbar from a player.
      *
      * @param player the player
      */
-    void hide(Player player);
+    void hide(ICorePlayer player);
 
     /**
      * Get the key of the hotbar.
