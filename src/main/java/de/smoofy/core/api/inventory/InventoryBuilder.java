@@ -11,6 +11,7 @@ import de.smoofy.core.api.item.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -30,6 +31,10 @@ public class InventoryBuilder {
 
     public InventoryBuilder(String title, InventoryType inventoryType) {
         this.inventory = Bukkit.createInventory(null, inventoryType, title);
+    }
+
+    public InventoryBuilder(InventoryHolder inventoryHolder, int size, String title) {
+        this.inventory = Bukkit.createInventory(inventoryHolder, size, title);
     }
 
     public InventoryBuilder fill(ItemBuilder itemBuilder) {

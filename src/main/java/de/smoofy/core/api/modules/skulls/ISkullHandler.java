@@ -8,6 +8,7 @@ package de.smoofy.core.api.modules.skulls;
  */
 
 import de.smoofy.core.api.modules.skulls.flyingskull.IFlyingSkull;
+import de.smoofy.core.api.player.ICorePlayer;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -20,6 +21,8 @@ public interface ISkullHandler {
     IFlyingSkull create(Location location, ItemStack itemStack, boolean smallHead);
 
     IFlyingSkull create(Location location, boolean smallHead);
+
+    ItemStack skull(ICorePlayer player);
 
     ItemStack skull(Player player);
 

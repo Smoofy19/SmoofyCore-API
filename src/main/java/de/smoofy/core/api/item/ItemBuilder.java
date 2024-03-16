@@ -108,6 +108,15 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder removeEnchant(XEnchantment enchantment) {
+        if (enchantment.getEnchant() == null) {
+            return this;
+        }
+        this.itemMeta.removeEnchant(enchantment.getEnchant());
+        return this;
+    }
+
+
     public ItemBuilder potionEffect(XPotion potion, int duration, int amplifier, boolean ambient, boolean particles, boolean icon) {
         PotionEffectType potionEffectType = potion.getPotionEffectType();
         if (potionEffectType == null) {
