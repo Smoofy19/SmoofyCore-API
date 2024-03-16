@@ -12,13 +12,11 @@ import java.util.Map;
 /**
  *
  */
-public interface IPlayerBoard {
+public interface ICoreBoard {
 
     String line(int score);
 
-    void set(String line, int score);
-
-    void setAll(String... lines);
+    void set(int score, String line);
 
     void clear();
 
